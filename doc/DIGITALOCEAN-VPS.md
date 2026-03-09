@@ -1,6 +1,7 @@
 # DigitalOcean VPS Deployment
 
 This repo now includes a production-oriented Docker setup for deploying BirdAI to a single DigitalOcean Droplet while keeping PostgreSQL in DigitalOcean Managed PostgreSQL.
+The validation overlay can also start a temporary Postgres container on the Droplet when `DATABASE_URL` is left unset.
 
 ## Files
 
@@ -13,10 +14,12 @@ This repo now includes a production-oriented Docker setup for deploying BirdAI t
 ## Initial Validation On Droplet IP
 
 1. Copy `.env.production.example` to `.env.production` and fill in:
-   - `DATABASE_URL`
    - `BETTER_AUTH_SECRET`
    - `BIRDAI_PUBLIC_URL=http://<droplet-ip>:3100`
-2. Start the app:
+2. Set one database mode:
+   - preferred steady-state: set `DATABASE_URL` to your managed PostgreSQL instance
+   - temporary validation: leave `DATABASE_URL` unset and let `docker-compose.validation.yml` start a local Postgres container
+3. Start the app:
 
 ```sh
 docker compose --env-file .env.production \
@@ -25,7 +28,7 @@ docker compose --env-file .env.production \
   up -d --build
 ```
 
-3. Verify:
+4. Verify:
 
 ```sh
 curl http://<droplet-ip>:3100/api/health
@@ -60,7 +63,6 @@ Required GitHub Actions secrets:
 - `DEPLOY_SSH_PRIVATE_KEY`
 - `DEPLOY_SSH_KNOWN_HOSTS`
 - `DEPLOY_APP_DIR`
-- `DEPLOY_DATABASE_URL`
 - `DEPLOY_BETTER_AUTH_SECRET`
 - `DEPLOY_BIRDAI_PUBLIC_URL`
 
@@ -69,12 +71,17 @@ Optional secrets:
 - `DEPLOY_COMPOSE_FILES`
   - default: `docker-compose.prod.yml:docker-compose.validation.yml`
   - final public example: `docker-compose.prod.yml:docker-compose.public.yml`
+- `DEPLOY_DATABASE_URL`
 - `DEPLOY_BIRDAI_DOMAIN`
 - `DEPLOY_ACME_EMAIL`
 - `DEPLOY_OPENAI_API_KEY`
 - `DEPLOY_ANTHROPIC_API_KEY`
 - `DEPLOY_BIRDAI_PORT`
 - `DEPLOY_DATA_DIR`
+- `DEPLOY_VALIDATION_DB_USER`
+- `DEPLOY_VALIDATION_DB_PASSWORD`
+- `DEPLOY_VALIDATION_DB_NAME`
+- `DEPLOY_VALIDATION_DB_DATA_DIR`
 - `DEPLOY_CADDY_DATA_DIR`
 - `DEPLOY_CADDY_CONFIG_DIR`
 - `DEPLOY_EXPOSURE`

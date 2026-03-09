@@ -44,7 +44,7 @@ jobs:
 
   deploy:
     needs: verify
-    if: ${{ secrets.DEPLOY_HOST != '' && secrets.DEPLOY_USER != '' && secrets.DEPLOY_SSH_PRIVATE_KEY != '' && secrets.DEPLOY_SSH_KNOWN_HOSTS != '' && secrets.DEPLOY_APP_DIR != '' && secrets.DEPLOY_DATABASE_URL != '' && secrets.DEPLOY_BETTER_AUTH_SECRET != '' && secrets.DEPLOY_BIRDAI_PUBLIC_URL != '' }}
+    if: ${{ secrets.DEPLOY_HOST != '' && secrets.DEPLOY_USER != '' && secrets.DEPLOY_SSH_PRIVATE_KEY != '' && secrets.DEPLOY_SSH_KNOWN_HOSTS != '' && secrets.DEPLOY_APP_DIR != '' && secrets.DEPLOY_BETTER_AUTH_SECRET != '' && secrets.DEPLOY_BIRDAI_PUBLIC_URL != '' }}
     runs-on: ubuntu-latest
     timeout-minutes: 20
 
@@ -75,6 +75,10 @@ jobs:
           DEPLOY_ANTHROPIC_API_KEY: ${{ secrets.DEPLOY_ANTHROPIC_API_KEY }}
           DEPLOY_BIRDAI_PORT: ${{ secrets.DEPLOY_BIRDAI_PORT }}
           DEPLOY_DATA_DIR: ${{ secrets.DEPLOY_DATA_DIR }}
+          DEPLOY_VALIDATION_DB_USER: ${{ secrets.DEPLOY_VALIDATION_DB_USER }}
+          DEPLOY_VALIDATION_DB_PASSWORD: ${{ secrets.DEPLOY_VALIDATION_DB_PASSWORD }}
+          DEPLOY_VALIDATION_DB_NAME: ${{ secrets.DEPLOY_VALIDATION_DB_NAME }}
+          DEPLOY_VALIDATION_DB_DATA_DIR: ${{ secrets.DEPLOY_VALIDATION_DB_DATA_DIR }}
           DEPLOY_CADDY_DATA_DIR: ${{ secrets.DEPLOY_CADDY_DATA_DIR }}
           DEPLOY_CADDY_CONFIG_DIR: ${{ secrets.DEPLOY_CADDY_CONFIG_DIR }}
           DEPLOY_EXPOSURE: ${{ secrets.DEPLOY_EXPOSURE }}
@@ -91,6 +95,10 @@ jobs:
           BIRDAI_CONFIG=/birdai/instances/default/config.json
           BIRDAI_PORT=${DEPLOY_BIRDAI_PORT:-3100}
           BIRDAI_DATA_DIR=${DEPLOY_DATA_DIR:-./data/digitalocean-birdai}
+          VALIDATION_DB_USER=${DEPLOY_VALIDATION_DB_USER:-birdai}
+          VALIDATION_DB_PASSWORD=${DEPLOY_VALIDATION_DB_PASSWORD:-birdai}
+          VALIDATION_DB_NAME=${DEPLOY_VALIDATION_DB_NAME:-birdai}
+          VALIDATION_DB_DATA_DIR=${DEPLOY_VALIDATION_DB_DATA_DIR:-./data/digitalocean-postgres}
           OPENAI_API_KEY=${DEPLOY_OPENAI_API_KEY}
           ANTHROPIC_API_KEY=${DEPLOY_ANTHROPIC_API_KEY}
           BIRDAI_DOMAIN=${DEPLOY_BIRDAI_DOMAIN}

@@ -4,6 +4,7 @@ summary: Deploy BirdAI to a Droplet with managed Postgres
 ---
 
 Use this setup when you want BirdAI on a single DigitalOcean Droplet while keeping PostgreSQL in DigitalOcean Managed PostgreSQL.
+For the first IP-based smoke test, the validation overlay can also run a temporary local Postgres container if `DATABASE_URL` is blank.
 
 ## Files In This Repo
 
@@ -35,9 +36,13 @@ cp .env.production.example .env.production
 
 Fill in at least:
 
-- `DATABASE_URL`
 - `BETTER_AUTH_SECRET`
 - `BIRDAI_PUBLIC_URL`
+
+Database mode:
+
+- preferred steady-state: set `DATABASE_URL` to your managed PostgreSQL instance
+- temporary validation: leave `DATABASE_URL` blank and let `docker-compose.validation.yml` start a local Postgres container
 
 For initial IP validation, set:
 
@@ -94,19 +99,23 @@ Required GitHub Actions secrets:
 - `DEPLOY_SSH_PRIVATE_KEY`
 - `DEPLOY_SSH_KNOWN_HOSTS`
 - `DEPLOY_APP_DIR`
-- `DEPLOY_DATABASE_URL`
 - `DEPLOY_BETTER_AUTH_SECRET`
 - `DEPLOY_BIRDAI_PUBLIC_URL`
 
 Optional GitHub Actions secrets:
 
 - `DEPLOY_COMPOSE_FILES`
+- `DEPLOY_DATABASE_URL`
 - `DEPLOY_BIRDAI_DOMAIN`
 - `DEPLOY_ACME_EMAIL`
 - `DEPLOY_OPENAI_API_KEY`
 - `DEPLOY_ANTHROPIC_API_KEY`
 - `DEPLOY_BIRDAI_PORT`
 - `DEPLOY_DATA_DIR`
+- `DEPLOY_VALIDATION_DB_USER`
+- `DEPLOY_VALIDATION_DB_PASSWORD`
+- `DEPLOY_VALIDATION_DB_NAME`
+- `DEPLOY_VALIDATION_DB_DATA_DIR`
 - `DEPLOY_CADDY_DATA_DIR`
 - `DEPLOY_CADDY_CONFIG_DIR`
 - `DEPLOY_EXPOSURE`
