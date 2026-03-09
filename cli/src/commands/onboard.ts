@@ -60,6 +60,7 @@ const ONBOARD_ENV_KEYS = [
   "BIRDAI_ALLOWED_HOSTNAMES",
   "BIRDAI_AUTH_BASE_URL_MODE",
   "BIRDAI_AUTH_PUBLIC_BASE_URL",
+  "BIRDAI_AUTH_DISABLE_SIGN_UP",
   "BETTER_AUTH_URL",
   "BETTER_AUTH_BASE_URL",
   "BIRDAI_STORAGE_PROVIDER",
@@ -128,6 +129,7 @@ function quickstartDefaultsFromEnv(): {
     AUTH_BASE_URL_MODES,
   );
   const authBaseUrlMode = authBaseUrlModeFromEnv ?? (authPublicBaseUrl ? "explicit" : "auto");
+  const authDisableSignUp = parseBooleanFromEnv(process.env.BIRDAI_AUTH_DISABLE_SIGN_UP) ?? false;
   const allowedHostnamesFromEnv = process.env.BIRDAI_ALLOWED_HOSTNAMES
     ? process.env.BIRDAI_ALLOWED_HOSTNAMES
       .split(",")
@@ -185,7 +187,7 @@ function quickstartDefaultsFromEnv(): {
     },
     auth: {
       baseUrlMode: authBaseUrlMode,
-      disableSignUp: false,
+      disableSignUp: authDisableSignUp,
       ...(authPublicBaseUrl ? { publicBaseUrl: authPublicBaseUrl } : {}),
     },
     storage: {

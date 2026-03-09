@@ -2,6 +2,8 @@
 
 Run BirdAI in Docker without installing Node or pnpm locally.
 
+For a production-oriented DigitalOcean VPS setup with managed PostgreSQL, see `doc/DIGITALOCEAN-VPS.md`.
+
 ## One-liner (build + run)
 
 ```sh

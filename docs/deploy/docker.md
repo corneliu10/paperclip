@@ -5,6 +5,8 @@ summary: Docker Compose quickstart
 
 Run BirdAI in Docker without installing Node or pnpm locally.
 
+For a production-oriented Droplet setup with managed PostgreSQL and GitHub Actions deploys, use [DigitalOcean VPS](/deploy/digitalocean-vps).
+
 ## Compose Quickstart (Recommended)
 
 ```sh

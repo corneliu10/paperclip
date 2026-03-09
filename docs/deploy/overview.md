@@ -35,6 +35,7 @@ BirdAI supports three deployment configurations, from zero-friction local to int
 - Explicit public URL required
 - Stricter security checks
 - Best for: cloud hosting, internet-facing deployment
+- Recommended repo-backed VPS path: [DigitalOcean VPS](/deploy/digitalocean-vps)
 
 ## Choosing a Mode
 

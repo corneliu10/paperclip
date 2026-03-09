@@ -1,0 +1,21 @@
+services:
+  birdai:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    env_file:
+      - .env.production
+    environment:
+      HOST: "${HOST:-0.0.0.0}"
+      PORT: "${PORT:-3100}"
+      SERVE_UI: "true"
+      BIRDAI_HOME: "/birdai"
+      BIRDAI_INSTANCE_ID: "${BIRDAI_INSTANCE_ID:-default}"
+      BIRDAI_CONFIG: "${BIRDAI_CONFIG:-/birdai/instances/default/config.json}"
+      BIRDAI_DEPLOYMENT_MODE: "${BIRDAI_DEPLOYMENT_MODE:-authenticated}"
+      BIRDAI_DEPLOYMENT_EXPOSURE: "${BIRDAI_DEPLOYMENT_EXPOSURE:-public}"
+    expose:
+      - "3100"
+    volumes:
+      - "${BIRDAI_DATA_DIR:-./data/digitalocean-birdai}:/birdai"

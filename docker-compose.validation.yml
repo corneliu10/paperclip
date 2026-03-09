@@ -1,0 +1,4 @@
+services:
+  birdai:
+    ports:
+      - "${BIRDAI_PORT:-3100}:3100"
