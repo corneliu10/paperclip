@@ -1,4 +1,4 @@
-# @paperclipai/adapter-opencode-local
+# @birdai/adapter-opencode-local
 
 ## 0.2.7
 

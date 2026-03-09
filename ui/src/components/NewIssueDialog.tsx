@@ -33,7 +33,7 @@ import {
   AlertTriangle,
   Tag,
   Calendar,
-  Paperclip,
+  ImagePlus,
 } from "lucide-react";
 import { cn } from "../lib/utils";
 import { extractProviderIdWithFallback } from "../lib/model-utils";
@@ -42,7 +42,7 @@ import { MarkdownEditor, type MarkdownEditorRef, type MentionOption } from "./Ma
 import { AgentIcon } from "./AgentIconPicker";
 import { InlineEntitySelector, type InlineEntityOption } from "./InlineEntitySelector";
 
-const DRAFT_KEY = "paperclip:issue-draft";
+const DRAFT_KEY = "birdai:issue-draft";
 const DEBOUNCE_MS = 800;
 
 /** Return black or white hex based on background luminance (WCAG perceptual weights). */
@@ -919,7 +919,7 @@ export function NewIssueDialog() {
             onClick={() => attachInputRef.current?.click()}
             disabled={uploadDescriptionImage.isPending}
           >
-            <Paperclip className="h-3 w-3" />
+            <ImagePlus className="h-3 w-3" />
             {uploadDescriptionImage.isPending ? "Uploading..." : "Image"}
           </button>
 

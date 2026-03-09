@@ -1,4 +1,4 @@
-# paperclipai
+# birdai
 
 ## 0.2.7
 
@@ -6,13 +6,13 @@
 
 - Version bump (patch)
 - Updated dependencies
-  - @paperclipai/shared@0.2.7
-  - @paperclipai/adapter-utils@0.2.7
-  - @paperclipai/db@0.2.7
-  - @paperclipai/adapter-claude-local@0.2.7
-  - @paperclipai/adapter-codex-local@0.2.7
-  - @paperclipai/adapter-openclaw@0.2.7
-  - @paperclipai/server@0.2.7
+  - @birdai/shared@0.2.7
+  - @birdai/adapter-utils@0.2.7
+  - @birdai/db@0.2.7
+  - @birdai/adapter-claude-local@0.2.7
+  - @birdai/adapter-codex-local@0.2.7
+  - @birdai/adapter-openclaw@0.2.7
+  - @birdai/server@0.2.7
 
 ## 0.2.6
 
@@ -20,13 +20,13 @@
 
 - Version bump (patch)
 - Updated dependencies
-  - @paperclipai/shared@0.2.6
-  - @paperclipai/adapter-utils@0.2.6
-  - @paperclipai/db@0.2.6
-  - @paperclipai/adapter-claude-local@0.2.6
-  - @paperclipai/adapter-codex-local@0.2.6
-  - @paperclipai/adapter-openclaw@0.2.6
-  - @paperclipai/server@0.2.6
+  - @birdai/shared@0.2.6
+  - @birdai/adapter-utils@0.2.6
+  - @birdai/db@0.2.6
+  - @birdai/adapter-claude-local@0.2.6
+  - @birdai/adapter-codex-local@0.2.6
+  - @birdai/adapter-openclaw@0.2.6
+  - @birdai/server@0.2.6
 
 ## 0.2.5
 
@@ -34,13 +34,13 @@
 
 - Version bump (patch)
 - Updated dependencies
-  - @paperclipai/shared@0.2.5
-  - @paperclipai/adapter-utils@0.2.5
-  - @paperclipai/db@0.2.5
-  - @paperclipai/adapter-claude-local@0.2.5
-  - @paperclipai/adapter-codex-local@0.2.5
-  - @paperclipai/adapter-openclaw@0.2.5
-  - @paperclipai/server@0.2.5
+  - @birdai/shared@0.2.5
+  - @birdai/adapter-utils@0.2.5
+  - @birdai/db@0.2.5
+  - @birdai/adapter-claude-local@0.2.5
+  - @birdai/adapter-codex-local@0.2.5
+  - @birdai/adapter-openclaw@0.2.5
+  - @birdai/server@0.2.5
 
 ## 0.2.4
 
@@ -48,13 +48,13 @@
 
 - Version bump (patch)
 - Updated dependencies
-  - @paperclipai/shared@0.2.4
-  - @paperclipai/adapter-utils@0.2.4
-  - @paperclipai/db@0.2.4
-  - @paperclipai/adapter-claude-local@0.2.4
-  - @paperclipai/adapter-codex-local@0.2.4
-  - @paperclipai/adapter-openclaw@0.2.4
-  - @paperclipai/server@0.2.4
+  - @birdai/shared@0.2.4
+  - @birdai/adapter-utils@0.2.4
+  - @birdai/db@0.2.4
+  - @birdai/adapter-claude-local@0.2.4
+  - @birdai/adapter-codex-local@0.2.4
+  - @birdai/adapter-openclaw@0.2.4
+  - @birdai/server@0.2.4
 
 ## 0.2.3
 
@@ -62,13 +62,13 @@
 
 - Version bump (patch)
 - Updated dependencies
-  - @paperclipai/shared@0.2.3
-  - @paperclipai/adapter-utils@0.2.3
-  - @paperclipai/db@0.2.3
-  - @paperclipai/adapter-claude-local@0.2.3
-  - @paperclipai/adapter-codex-local@0.2.3
-  - @paperclipai/adapter-openclaw@0.2.3
-  - @paperclipai/server@0.2.3
+  - @birdai/shared@0.2.3
+  - @birdai/adapter-utils@0.2.3
+  - @birdai/db@0.2.3
+  - @birdai/adapter-claude-local@0.2.3
+  - @birdai/adapter-codex-local@0.2.3
+  - @birdai/adapter-openclaw@0.2.3
+  - @birdai/server@0.2.3
 
 ## 0.2.2
 
@@ -76,13 +76,13 @@
 
 - Version bump (patch)
 - Updated dependencies
-  - @paperclipai/shared@0.2.2
-  - @paperclipai/adapter-utils@0.2.2
-  - @paperclipai/db@0.2.2
-  - @paperclipai/adapter-claude-local@0.2.2
-  - @paperclipai/adapter-codex-local@0.2.2
-  - @paperclipai/adapter-openclaw@0.2.2
-  - @paperclipai/server@0.2.2
+  - @birdai/shared@0.2.2
+  - @birdai/adapter-utils@0.2.2
+  - @birdai/db@0.2.2
+  - @birdai/adapter-claude-local@0.2.2
+  - @birdai/adapter-codex-local@0.2.2
+  - @birdai/adapter-openclaw@0.2.2
+  - @birdai/server@0.2.2
 
 ## 0.2.1
 
@@ -90,10 +90,10 @@
 
 - Version bump (patch)
 - Updated dependencies
-  - @paperclipai/shared@0.2.1
-  - @paperclipai/adapter-utils@0.2.1
-  - @paperclipai/db@0.2.1
-  - @paperclipai/adapter-claude-local@0.2.1
-  - @paperclipai/adapter-codex-local@0.2.1
-  - @paperclipai/adapter-openclaw@0.2.1
-  - @paperclipai/server@0.2.1
+  - @birdai/shared@0.2.1
+  - @birdai/adapter-utils@0.2.1
+  - @birdai/db@0.2.1
+  - @birdai/adapter-claude-local@0.2.1
+  - @birdai/adapter-codex-local@0.2.1
+  - @birdai/adapter-openclaw@0.2.1
+  - @birdai/server@0.2.1

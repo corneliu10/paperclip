@@ -9,38 +9,38 @@ Client-side commands for managing issues, agents, approvals, and more.
 
 ```sh
 # List issues
-pnpm paperclipai issue list [--status todo,in_progress] [--assignee-agent-id <id>] [--match text]
+pnpm birdai issue list [--status todo,in_progress] [--assignee-agent-id <id>] [--match text]
 
 # Get issue details
-pnpm paperclipai issue get <issue-id-or-identifier>
+pnpm birdai issue get <issue-id-or-identifier>
 
 # Create issue
-pnpm paperclipai issue create --title "..." [--description "..."] [--status todo] [--priority high]
+pnpm birdai issue create --title "..." [--description "..."] [--status todo] [--priority high]
 
 # Update issue
-pnpm paperclipai issue update <issue-id> [--status in_progress] [--comment "..."]
+pnpm birdai issue update <issue-id> [--status in_progress] [--comment "..."]
 
 # Add comment
-pnpm paperclipai issue comment <issue-id> --body "..." [--reopen]
+pnpm birdai issue comment <issue-id> --body "..." [--reopen]
 
 # Checkout task
-pnpm paperclipai issue checkout <issue-id> --agent-id <agent-id>
+pnpm birdai issue checkout <issue-id> --agent-id <agent-id>
 
 # Release task
-pnpm paperclipai issue release <issue-id>
+pnpm birdai issue release <issue-id>
 ```
 
 ## Company Commands
 
 ```sh
-pnpm paperclipai company list
-pnpm paperclipai company get <company-id>
+pnpm birdai company list
+pnpm birdai company get <company-id>
 
 # Export to portable folder package (writes manifest + markdown files)
-pnpm paperclipai company export <company-id> --out ./exports/acme --include company,agents
+pnpm birdai company export <company-id> --out ./exports/acme --include company,agents
 
 # Preview import (no writes)
-pnpm paperclipai company import \
+pnpm birdai company import \
   --from https://github.com/<owner>/<repo>/tree/main/<path> \
   --target existing \
   --company-id <company-id> \
@@ -48,7 +48,7 @@ pnpm paperclipai company import \
   --dry-run
 
 # Apply import
-pnpm paperclipai company import \
+pnpm birdai company import \
   --from ./exports/acme \
   --target new \
   --new-company-name "Acme Imported" \
@@ -58,52 +58,52 @@ pnpm paperclipai company import \
 ## Agent Commands
 
 ```sh
-pnpm paperclipai agent list
-pnpm paperclipai agent get <agent-id>
+pnpm birdai agent list
+pnpm birdai agent get <agent-id>
 ```
 
 ## Approval Commands
 
 ```sh
 # List approvals
-pnpm paperclipai approval list [--status pending]
+pnpm birdai approval list [--status pending]
 
 # Get approval
-pnpm paperclipai approval get <approval-id>
+pnpm birdai approval get <approval-id>
 
 # Create approval
-pnpm paperclipai approval create --type hire_agent --payload '{"name":"..."}' [--issue-ids <id1,id2>]
+pnpm birdai approval create --type hire_agent --payload '{"name":"..."}' [--issue-ids <id1,id2>]
 
 # Approve
-pnpm paperclipai approval approve <approval-id> [--decision-note "..."]
+pnpm birdai approval approve <approval-id> [--decision-note "..."]
 
 # Reject
-pnpm paperclipai approval reject <approval-id> [--decision-note "..."]
+pnpm birdai approval reject <approval-id> [--decision-note "..."]
 
 # Request revision
-pnpm paperclipai approval request-revision <approval-id> [--decision-note "..."]
+pnpm birdai approval request-revision <approval-id> [--decision-note "..."]
 
 # Resubmit
-pnpm paperclipai approval resubmit <approval-id> [--payload '{"..."}']
+pnpm birdai approval resubmit <approval-id> [--payload '{"..."}']
 
 # Comment
-pnpm paperclipai approval comment <approval-id> --body "..."
+pnpm birdai approval comment <approval-id> --body "..."
 ```
 
 ## Activity Commands
 
 ```sh
-pnpm paperclipai activity list [--agent-id <id>] [--entity-type issue] [--entity-id <id>]
+pnpm birdai activity list [--agent-id <id>] [--entity-type issue] [--entity-id <id>]
 ```
 
 ## Dashboard
 
 ```sh
-pnpm paperclipai dashboard get
+pnpm birdai dashboard get
 ```
 
 ## Heartbeat
 
 ```sh
-pnpm paperclipai heartbeat run --agent-id <agent-id> [--api-base http://localhost:3100]
+pnpm birdai heartbeat run --agent-id <agent-id> [--api-base http://localhost:3100]
 ```

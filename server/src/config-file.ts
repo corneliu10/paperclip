@@ -1,15 +1,15 @@
 import fs from "node:fs";
-import { paperclipConfigSchema, type PaperclipConfig } from "@paperclipai/shared";
-import { resolvePaperclipConfigPath } from "./paths.js";
+import { birdaiConfigSchema, type BirdAIConfig } from "@birdai/shared";
+import { resolveBirdAIConfigPath } from "./paths.js";
 
-export function readConfigFile(): PaperclipConfig | null {
-  const configPath = resolvePaperclipConfigPath();
+export function readConfigFile(): BirdAIConfig | null {
+  const configPath = resolveBirdAIConfigPath();
 
   if (!fs.existsSync(configPath)) return null;
 
   try {
     const raw = JSON.parse(fs.readFileSync(configPath, "utf-8"));
-    return paperclipConfigSchema.parse(raw);
+    return birdaiConfigSchema.parse(raw);
   } catch {
     return null;
   }

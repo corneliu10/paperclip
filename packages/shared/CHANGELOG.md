@@ -1,4 +1,4 @@
-# @paperclipai/shared
+# @birdai/shared
 
 ## 0.2.7
 

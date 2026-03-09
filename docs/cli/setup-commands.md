@@ -5,32 +5,32 @@ summary: Onboard, run, doctor, and configure
 
 Instance setup and diagnostics commands.
 
-## `paperclipai run`
+## `birdai run`
 
 One-command bootstrap and start:
 
 ```sh
-pnpm paperclipai run
+pnpm birdai run
 ```
 
 Does:
 
 1. Auto-onboards if config is missing
-2. Runs `paperclipai doctor` with repair enabled
+2. Runs `birdai doctor` with repair enabled
 3. Starts the server when checks pass
 
 Choose a specific instance:
 
 ```sh
-pnpm paperclipai run --instance dev
+pnpm birdai run --instance dev
 ```
 
-## `paperclipai onboard`
+## `birdai onboard`
 
 Interactive first-time setup:
 
 ```sh
-pnpm paperclipai onboard
+pnpm birdai onboard
 ```
 
 First prompt:
@@ -41,22 +41,22 @@ First prompt:
 Start immediately after onboarding:
 
 ```sh
-pnpm paperclipai onboard --run
+pnpm birdai onboard --run
 ```
 
 Non-interactive defaults + immediate start (opens browser on server listen):
 
 ```sh
-pnpm paperclipai onboard --yes
+pnpm birdai onboard --yes
 ```
 
-## `paperclipai doctor`
+## `birdai doctor`
 
 Health checks with optional auto-repair:
 
 ```sh
-pnpm paperclipai doctor
-pnpm paperclipai doctor --repair
+pnpm birdai doctor
+pnpm birdai doctor --repair
 ```
 
 Validates:
@@ -67,51 +67,51 @@ Validates:
 - Storage configuration
 - Missing key files
 
-## `paperclipai configure`
+## `birdai configure`
 
 Update configuration sections:
 
 ```sh
-pnpm paperclipai configure --section server
-pnpm paperclipai configure --section secrets
-pnpm paperclipai configure --section storage
+pnpm birdai configure --section server
+pnpm birdai configure --section secrets
+pnpm birdai configure --section storage
 ```
 
-## `paperclipai env`
+## `birdai env`
 
 Show resolved environment configuration:
 
 ```sh
-pnpm paperclipai env
+pnpm birdai env
 ```
 
-## `paperclipai allowed-hostname`
+## `birdai allowed-hostname`
 
 Allow a private hostname for authenticated/private mode:
 
 ```sh
-pnpm paperclipai allowed-hostname my-tailscale-host
+pnpm birdai allowed-hostname my-tailscale-host
 ```
 
 ## Local Storage Paths
 
 | Data | Default Path |
 |------|-------------|
-| Config | `~/.paperclip/instances/default/config.json` |
-| Database | `~/.paperclip/instances/default/db` |
-| Logs | `~/.paperclip/instances/default/logs` |
-| Storage | `~/.paperclip/instances/default/data/storage` |
-| Secrets key | `~/.paperclip/instances/default/secrets/master.key` |
+| Config | `~/.birdai/instances/default/config.json` |
+| Database | `~/.birdai/instances/default/db` |
+| Logs | `~/.birdai/instances/default/logs` |
+| Storage | `~/.birdai/instances/default/data/storage` |
+| Secrets key | `~/.birdai/instances/default/secrets/master.key` |
 
 Override with:
 
 ```sh
-PAPERCLIP_HOME=/custom/home PAPERCLIP_INSTANCE_ID=dev pnpm paperclipai run
+BIRDAI_HOME=/custom/home BIRDAI_INSTANCE_ID=dev pnpm birdai run
 ```
 
 Or pass `--data-dir` directly on any command:
 
 ```sh
-pnpm paperclipai run --data-dir ./tmp/paperclip-dev
-pnpm paperclipai doctor --data-dir ./tmp/paperclip-dev
+pnpm birdai run --data-dir ./tmp/birdai-dev
+pnpm birdai doctor --data-dir ./tmp/birdai-dev
 ```

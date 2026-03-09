@@ -1,6 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="140" height="32" viewBox="0 0 140 32" fill="none">
-  <g stroke-linecap="round" stroke-linejoin="round">
-    <path stroke="#18181b" stroke-width="2" d="m18 4-8.414 8.586a2 2 0 0 0 2.829 2.829l8.414-8.586a4 4 0 1 0-5.657-5.657l-8.379 8.551a6 6 0 1 0 8.485 8.485l8.379-8.551"/>
+  <g transform="translate(2, 4)">
+    <path fill="#18181b" d="M6.83 8a2.995 2.995 0 0 0 0-2H17a6 6 0 0 1 0 12h-1.17a2.997 2.997 0 0 0 0-2H17a4 4 0 0 0 0-8H6.83Z"/>
+    <path fill="#18181b" d="M13 20a3 3 0 1 0 0-6 3 3 0 0 0 0 6ZM4 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/>
   </g>
-  <text x="32" y="22" font-family="system-ui, -apple-system, sans-serif" font-size="18" font-weight="600" fill="#18181b">Paperclip</text>
+  <text x="30" y="22" font-family="system-ui, -apple-system, sans-serif" font-size="18" font-weight="600" fill="#18181b">BirdAI</text>
 </svg>

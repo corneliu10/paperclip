@@ -15,7 +15,7 @@ import {
   CollapsibleContent,
   CollapsibleTrigger,
 } from "@/components/ui/collapsible";
-import type { Agent } from "@paperclipai/shared";
+import type { Agent } from "@birdai/shared";
 
 /** BFS sort: roots first (no reportsTo), then their direct reports, etc. */
 function sortByHierarchy(agents: Agent[]): Agent[] {

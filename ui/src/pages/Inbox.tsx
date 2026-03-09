@@ -39,7 +39,7 @@ import {
 } from "lucide-react";
 import { Identity } from "../components/Identity";
 import { PageTabBar } from "../components/PageTabBar";
-import type { HeartbeatRun, Issue, JoinRequest } from "@paperclipai/shared";
+import type { HeartbeatRun, Issue, JoinRequest } from "@birdai/shared";
 
 const STALE_THRESHOLD_MS = 24 * 60 * 60 * 1000; // 24 hours
 const RECENT_ISSUES_LIMIT = 100;
@@ -64,7 +64,7 @@ type SectionKey =
   | "alerts"
   | "stale_work";
 
-const DISMISSED_KEY = "paperclip:inbox:dismissed";
+const DISMISSED_KEY = "birdai:inbox:dismissed";
 
 function loadDismissed(): Set<string> {
   try {

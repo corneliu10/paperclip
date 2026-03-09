@@ -1,4 +1,4 @@
-# @paperclipai/adapter-utils
+# @birdai/adapter-utils
 
 ## 0.2.7
 

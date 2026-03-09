@@ -1,10 +1,10 @@
 import * as p from "@clack/prompts";
-import type { SecretProvider } from "@paperclipai/shared";
+import type { SecretProvider } from "@birdai/shared";
 import type { SecretsConfig } from "../config/schema.js";
-import { resolveDefaultSecretsKeyFilePath, resolvePaperclipInstanceId } from "../config/home.js";
+import { resolveDefaultSecretsKeyFilePath, resolveBirdAIInstanceId } from "../config/home.js";
 
 function defaultKeyFilePath(): string {
-  return resolveDefaultSecretsKeyFilePath(resolvePaperclipInstanceId());
+  return resolveDefaultSecretsKeyFilePath(resolveBirdAIInstanceId());
 }
 
 export function defaultSecretsConfig(): SecretsConfig {
